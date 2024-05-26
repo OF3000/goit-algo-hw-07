@@ -27,25 +27,21 @@ def min_value_node(node):
     current = node
     while current.left:
         current = current.left
-    return current
+    return current.val
 
 ## Завдання 2
 def max_value_node(node):
     current = node
     while current.right:
         current = current.right
-    return current
+    return current.val
 
 ## Завдання 3
 def sum_value_node(node):
-    if node.right and node.left:
+    if node:
         sum = node.val + sum_value_node(node.right) + sum_value_node(node.left)
-    elif node.right:
-        sum = node.val + sum_value_node(node.right)
-    elif node.left:
-        sum = node.val + sum_value_node(node.left)
-    else: 
-        sum = node.val
+    else:
+        sum = 0   
     return sum
 
 if __name__ == "__main__":
